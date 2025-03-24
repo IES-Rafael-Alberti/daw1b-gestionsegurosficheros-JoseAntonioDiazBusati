@@ -2,13 +2,27 @@ package model
 
 abstract class Seguro(
     val numPoliza: Int,
-    val dniTitular: String,
-    private val importe: Double
-) {
+    private val dniTitular: String,
+    protected val importe: Double
+): IExportable {
 
     abstract fun calcularImporteAnioSiguiente(interes: Double): Double
 
     abstract fun tipoSeguro():String
 
-    abstract fun serializar():String // Convierte el objeto a formato txt
+    override fun serializar(separador: String): String {
+        return "${numPoliza} $separador $dniTitular $separador ${importe}"
+    }
+
+    override fun toString(): String {
+        return "Seguro(numPoliza=$numPoliza, dniTitular=$dniTitular, importe=$importe)"
+    }
+
+    override fun hashCode(): Int {
+        return numPoliza
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
 }

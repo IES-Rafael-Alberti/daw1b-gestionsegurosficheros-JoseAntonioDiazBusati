@@ -14,8 +14,7 @@ class SeguroVida(
         TODO("Not yet implemented")
     }
 
-    override fun serializar(): String {
-        TODO("Not yet implemented")
+    override fun serializar(separador: String): String {
+        return super.serializar(separador)
     }
-
 }

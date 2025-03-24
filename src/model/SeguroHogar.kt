@@ -1,10 +1,20 @@
 package model
 
-class SeguroHogar(
-    numPoliza: Int,
-    dniTitular: String,
-    importe: Double
-):Seguro(numPoliza, dniTitular, importe) {
+class SeguroHogar: Seguro{
+   /*
+   constructor(
+        private val metrosCuadrados: Double,
+        private val valorContenido,
+        private val direccion,
+        private val anioConstruccion:Double,
+    )
+    */
+
+    private constructor(
+        numPoliza: Int,
+        dniTitular: String,
+        importe: Double
+    ):super(numPoliza,dniTitular, importe)
 
     override fun calcularImporteAnioSiguiente(interes: Double): Double {
         TODO("Not yet implemented")
@@ -14,8 +24,7 @@ class SeguroHogar(
         TODO("Not yet implemented")
     }
 
-    override fun serializar(): String {
-        TODO("Not yet implemented")
+    override fun serializar(separador: String): String {
+        return super.serializar(separador)
     }
-
 }
