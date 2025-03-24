@@ -6,6 +6,8 @@ enum class Perfil () {
     CONSULTA; // Solo puede ver informacion
 
     companion object{
-        fun getPerfil(valor: String):Perfil{}
+        fun getPerfil(valor: String):Perfil{
+            return ADMIN
+        }
     }
 }
