@@ -1,6 +1,6 @@
-package Dominio
+package model
 
-class SeguroVida(
+class SeguroAuto(
     numPoliza: Int,
     dniTitular: String,
     importe: Double

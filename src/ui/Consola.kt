@@ -1,4 +1,4 @@
-package Consola
+package ui
 
 class Consola {
 

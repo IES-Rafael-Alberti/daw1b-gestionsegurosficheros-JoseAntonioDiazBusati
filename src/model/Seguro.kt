@@ -1,4 +1,4 @@
-package Dominio
+package model
 
 abstract class Seguro(
     val numPoliza: Int,

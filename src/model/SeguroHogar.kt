@@ -1,4 +1,4 @@
-package Dominio
+package model
 
 class SeguroHogar(
     numPoliza: Int,
