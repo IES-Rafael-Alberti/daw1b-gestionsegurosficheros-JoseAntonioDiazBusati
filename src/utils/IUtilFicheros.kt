@@ -1,5 +1,8 @@
 package utils
 
+import model.IExportable
+import model.Seguro
+
 interface IUtilFicheros {
     fun leerArchivo(ruta: String): List<String>
     fun leerSeguros(ruta: String, mapaSeguros: Map<String, (List<String>) -> Seguro>): List<Seguro>

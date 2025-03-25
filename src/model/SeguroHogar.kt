@@ -37,7 +37,7 @@ class SeguroHogar : Seguro {
     }
 
     companion object {
-        var numPolizaHogar: Int = 100000
+        private var numPolizaHogar: Int = 100000
 
         val PORCENTAJE_INCREMENTO_ANIOS = 0.02
 
@@ -64,9 +64,9 @@ class SeguroHogar : Seguro {
 
     override fun calcularImporteAnioSiguiente(interes: Double): Double {
         if (anioConstruccion < CICLO_ANIOS_INCREMENTO) {
-            return importe
+            return interes
         } else {
-            return (((anioConstruccion / CICLO_ANIOS_INCREMENTO) * PORCENTAJE_INCREMENTO_ANIOS) * importe) + importe
+            return (((anioConstruccion / CICLO_ANIOS_INCREMENTO) * PORCENTAJE_INCREMENTO_ANIOS) * interes) + interes
         }
     }
 

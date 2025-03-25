@@ -23,7 +23,7 @@ class Usuario(
 
     companion object{
         fun crearUsuario(datos: List<String>): Usuario{
-            return Usuario(datos[0],datos[1],datos[2].format())
+            return Usuario(datos[0],datos[1],Perfil.getPerfil(datos[2]))
         }
     }
 }
