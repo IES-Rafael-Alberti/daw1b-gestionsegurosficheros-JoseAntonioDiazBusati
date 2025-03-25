@@ -11,7 +11,7 @@ abstract class Seguro(
     abstract fun tipoSeguro():String
 
     override fun serializar(separador: String): String {
-        return "${numPoliza} $separador $dniTitular $separador ${importe}"
+        return "${numPoliza}$separador$dniTitular$separador${importe}"
     }
 
     override fun toString(): String {
@@ -23,6 +23,6 @@ abstract class Seguro(
     }
 
     override fun equals(other: Any?): Boolean {
-        return super.equals(other)
+        return other is Seguro && this.numPoliza == other.numPoliza
     }
 }

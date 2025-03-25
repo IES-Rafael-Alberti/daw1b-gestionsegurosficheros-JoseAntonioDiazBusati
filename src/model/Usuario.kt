@@ -2,11 +2,20 @@ package model
 
 class Usuario(
     val nombre: String,
-    private val clave: String,
+    private var clave: String,
     val perfil: Perfil
 ): IExportable {
 
-    fun cambiarClave(nuevaClaveEncriptada: String){}
+    fun cambiarClave(nuevaClaveEncriptada: String): String{
+        println("Introduzca la antigua clave para cambiarla: ")
+        val antiguaClave = readln()
+        if (antiguaClave.lowercase() == clave.lowercase()){
+            clave = nuevaClaveEncriptada
+            println("Clave actualizada")
+        }else{
+            println("No coinciden. Accion denegada")
+        }
+    }
 
     override fun serializar(separador: String): String {
         return (nombre + separador + clave + separador + perfil)
@@ -14,13 +23,8 @@ class Usuario(
 
     companion object{
         fun crearUsuario(datos: List<String>): Usuario{
-            println("Introduce el nombre de usuario: ")
-            val nombre = readln()
-            println("Introduce la clave del usuario: ")
-            val clave = readln()
-            println("Introduce la clave del usuario: ")
-            val perfil = readln()
-            return Usuario(nombre,clave)
+
+            return Usuario()
         }
     }
 }
