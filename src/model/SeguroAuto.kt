@@ -1,10 +1,19 @@
 package model
 
-class SeguroAuto(
-    numPoliza: Int,
-    dniTitular: String,
-    importe: Double
-):Seguro(numPoliza, dniTitular, importe) {
+class SeguroAuto:Seguro {
+
+    private val descripcion: String
+    private var combustible: Double
+    private val tipoAuto: Auto
+    private val cobertura: Cobertura
+    private val asistenciaCarretera: Boolean
+    private val numPartes: Int
+
+
+
+    companion object{
+        var numPolizasAuto: Int = 400000
+    }
 
     override fun calcularImporteAnioSiguiente(interes: Double): Double {
         TODO("Not yet implemented")
@@ -20,13 +29,5 @@ class SeguroAuto(
 
     override fun toString(): String {
         return super.toString()
-    }
-
-    override fun hashCode(): Int {
-        return super.hashCode()
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return super.equals(other)
     }
 }

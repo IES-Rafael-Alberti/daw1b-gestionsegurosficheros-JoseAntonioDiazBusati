@@ -6,7 +6,7 @@ class Usuario(
     val perfil: Perfil
 ): IExportable {
 
-    fun cambiarClave(nuevaClaveEncriptada: String): String{
+    fun cambiarClave(nuevaClaveEncriptada: String){
         println("Introduzca la antigua clave para cambiarla: ")
         val antiguaClave = readln()
         if (antiguaClave.lowercase() == clave.lowercase()){
@@ -23,8 +23,7 @@ class Usuario(
 
     companion object{
         fun crearUsuario(datos: List<String>): Usuario{
-
-            return Usuario()
+            return Usuario(datos[0],datos[1],datos[2].format())
         }
     }
 }
