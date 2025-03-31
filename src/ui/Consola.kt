@@ -2,11 +2,11 @@ package ui
 
 class Consola: IEntradaSalida {
     override fun mostrar(msj: String, salto: Boolean, pausa: Boolean) {
-        TODO("Not yet implemented")
+        println(msj)
     }
 
     override fun mostrarError(msj: String, pausa: Boolean) {
-        TODO("Not yet implemented")
+        println(msj)
     }
 
     override fun pedirInfo(msj: String): String {

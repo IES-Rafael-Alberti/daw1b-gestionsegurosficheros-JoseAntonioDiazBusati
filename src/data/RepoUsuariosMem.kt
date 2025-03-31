@@ -3,12 +3,12 @@ package data
 import model.Perfil
 import model.Usuario
 
-class RepoUsuariosMem: IRepoUsuarios {
+open class RepoUsuariosMem : IRepoUsuarios {
 
-    val usuarios = mutableListOf<Usuario>()
+    protected val usuarios = mutableListOf<Usuario>()
 
     override fun agregar(usuario: Usuario): Boolean {
-        if (buscar(usuario.nombre)== null){
+        if (buscar(usuario.nombre) == null) {
             usuarios.add(usuario)
             return true
         }
@@ -16,27 +16,31 @@ class RepoUsuariosMem: IRepoUsuarios {
     }
 
     override fun buscar(nombreUsuario: String): Usuario? {
-        TODO("Not yet implemented")
+        return usuarios.find { it.nombre == nombreUsuario }
     }
 
     override fun eliminar(usuario: Usuario): Boolean {
-
-        return true
+        return usuarios.remove(usuario)
     }
 
     override fun eliminar(nombreUsuario: String): Boolean {
-        TODO("Not yet implemented")
+        val usuario = buscar(nombreUsuario)
+        if (usuario != null) {
+            eliminar(usuario)
+        }
+        return false
     }
 
     override fun obtenerTodos(): List<Usuario> {
-        TODO("Not yet implemented")
+        return usuarios
     }
 
     override fun obtener(perfil: Perfil): List<Usuario> {
-        TODO("Not yet implemented")
+        return usuarios.filter { it.perfil == perfil }
     }
 
     override fun cambiarClave(usuario: Usuario, nuevaClave: String): Boolean {
-        TODO("Not yet implemented")
+        usuario.cambiarClave(nuevaClave)
+        return true
     }
 }

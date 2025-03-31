@@ -26,7 +26,7 @@ abstract class Seguro(
     }
 
     override fun hashCode(): Int {
-        return numPoliza
+        return numPoliza.hashCode()
     }
 
     override fun equals(other: Any?): Boolean {
