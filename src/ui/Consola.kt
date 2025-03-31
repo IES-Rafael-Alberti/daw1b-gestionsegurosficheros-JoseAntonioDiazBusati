@@ -1,63 +1,57 @@
 package ui
 
-class Consola {
-
-    private fun mostrarMensaje(msg: String){
-        println(msg)
+class Consola: IEntradaSalida {
+    override fun mostrar(msj: String, salto: Boolean, pausa: Boolean) {
+        TODO("Not yet implemented")
     }
 
-    fun modoEjecucion(){
-        mostrarMensaje("\nSeleccione modo de ejecución:\n\n"+
-                "\t 1.SIMULACION (sólo en memoria)\n\n"+
-                "\t 2.ALMACENAMIENTO (usar ficheros)\n"
-        )
+    override fun mostrarError(msj: String, pausa: Boolean) {
+        TODO("Not yet implemented")
     }
 
-    fun mostrarMenuAdmin(){
-        mostrarMensaje("\n1. Usuarios\n"+
-                "2. Seguros\n"+
-                "3. Salir\n"
-        )
+    override fun pedirInfo(msj: String): String {
+        TODO("Not yet implemented")
     }
 
-    fun submenuUsersAdmin(){
-        mostrarMensaje("\n1. Contratar Seguro\n"+
-                "2. Editar Seguro (ingresar ID)\n"+
-                "3. Eliminar Seguro (ingresar ID)\n"+
-                "4. Listar Seguros\n"
-        )
+    override fun pedirInfo(
+        msj: String,
+        error: String,
+        debeCumplir: (String) -> Boolean
+    ): String {
+        TODO("Not yet implemented")
     }
 
-    fun submenuContratoAdmin(){
-        mostrarMensaje("\n1. Hogar\n"+
-                "2. Coche\n"+
-                "3. Moto\n"
-        )
+    override fun pedirDouble(
+        prompt: String,
+        error: String,
+        errorConv: String,
+        debeCumplir: (Double) -> Boolean
+    ): Double {
+        TODO("Not yet implemented")
     }
 
-    fun menuConsulta(){
-        mostrarMensaje("\n1. Seguros"+
-                "2. Salir\n"
-        )
+    override fun pedirEntero(
+        prompt: String,
+        error: String,
+        errorConv: String,
+        debeCumplir: (Int) -> Boolean
+    ): Int {
+        TODO("Not yet implemented")
     }
 
-    fun submenuConsulta(){
-        mostrarMensaje("1. Listar Seguros\n")
+    override fun pedirInfoOculta(prompt: String): String {
+        TODO("Not yet implemented")
     }
 
-    fun menu(){
-        var assist = true
-        try {
-            do {
-                modoEjecucion()
-                mostrarMensaje("Seleccione una opcion: ")
-                val opcionModo = readln()
-                if (opcionModo.lowercase() == "simulacion"){}
-                if (opcionModo.lowercase() == "almacenamiento"){}
-            }while (assist)
+    override fun pausar(msj: String) {
+        TODO("Not yet implemented")
+    }
 
-        }catch (e:IllegalArgumentException){
-            mostrarMensaje("**Error** Tipo de dato inválido!!!")
-        }
+    override fun limpiarPantalla(numSaltos: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun preguntar(mensaje: String): Boolean {
+        TODO("Not yet implemented")
     }
 }

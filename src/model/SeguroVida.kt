@@ -59,14 +59,6 @@ class SeguroVida:Seguro{
         TODO("Not yet implemented")
     }
 
-    override fun tipoSeguro(): String {
-        val seguro = this::class.simpleName
-        if (seguro == null) {
-            return "Desconocido"
-        } else {
-            return seguro
-        }
-    }
 
     override fun serializar(separador: String): String {
         return super.serializar(separador)
