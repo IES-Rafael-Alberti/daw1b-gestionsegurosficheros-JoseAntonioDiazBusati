@@ -56,7 +56,7 @@ class SeguroVida:Seguro{
     }
 
     override fun calcularImporteAnioSiguiente(interes: Double): Double {
-        TODO("Not yet implemented")
+        return (INTERES_RESIDUAL * interes)+interes
     }
 
 
